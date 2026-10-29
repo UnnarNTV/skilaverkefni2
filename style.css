@@ -41,6 +41,11 @@ h1 {
   flex-grow: 1;
   background-color: rgb(241, 204, 80);
   border: 1px solid grey;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px;
   /* box-shadow: 2px 2px 3px black; */
 }
 
