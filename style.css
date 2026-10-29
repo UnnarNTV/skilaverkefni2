@@ -71,7 +71,7 @@ section {
   margin: 0 20px 40px;
   box-shadow: 3px 3px 3px black;
   border-radius: 5px;
-  padding: 5px;
+  padding: 5px 5px 30px;
 }
 
 h2 {
@@ -98,7 +98,11 @@ h2 {
   align-items: center;
 }
 
-.task-name:hover {
+.task-done {
+  background-color: green;
+}
+
+.task-title:hover {
   cursor: default;
 }
 
@@ -110,7 +114,7 @@ h2 {
   visibility: visible;
 }
 
-.task-name {
+.task-title {
   font-size: 20px;
   margin: 0;
   text-align: left;
