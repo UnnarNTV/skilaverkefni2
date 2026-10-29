@@ -41,6 +41,17 @@ function removeTask(id) {
   renderTasks();
 }
 
+// Renders updated statistics about tasks in the header
+function updateStatistics() {
+  const tasksTotal = tasks.length;
+  const tasksFinished = tasks.filter((task) => task.done).length;
+  const tasksUncompleted = tasks.filter((task) => !task.done).length;
+
+  document.getElementById("tasks-total").innerHTML = tasksTotal;
+  document.getElementById("tasks-finished").innerHTML = tasksFinished;
+  document.getElementById("tasks-uncompleted").innerHTML = tasksUncompleted;
+}
+
 // Generates html for tasks and displays them on the task display
 function renderTasks() {
   console.log("Task array: ", tasks);
@@ -58,6 +69,7 @@ function renderTasks() {
     )
     .join("");
   document.getElementById("task-display").innerHTML = taskHTML;
+  updateStatistics();
 }
 
 renderTasks();
