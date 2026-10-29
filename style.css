@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+}
+
+body {
+  background-color: beige;
+  margin: 0;
+}
+
+.container {
+  width: 900px;
+  margin: 0 auto;
+  border: 1px solid grey;
+  border-top: none;
+  /* box-shadow: 2px 2px 3px black; */
+}
+
+/* Header */
+header {
+  background-color: purple;
+  position: sticky;
+  top: 0px;
+  padding: 1px 0 0;
+  border-top: 1px solid grey;
+}
+
+h1 {
+  text-align: center;
+}
+
+.statistics-row {
+  display: flex;
+  justify-content: center;
+}
+
+.statistic-box {
+  text-align: center;
+  flex-grow: 1;
+  background-color: rgb(241, 204, 80);
+  border: 1px solid grey;
+  /* box-shadow: 2px 2px 3px black; */
+}
+
+.statistic-box p {
+  margin: 0;
+}
+
+/* Main section */
+main {
+  background-color: white;
+  height: 1500px;
+}
+
+/* Footer */
+footer {
+  background-color: black;
+  height: 100px;
+}
