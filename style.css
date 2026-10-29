@@ -48,6 +48,17 @@ h1 {
   margin: 0;
 }
 
+.task-form {
+  background-color: white;
+  padding: 5px;
+  text-align: center;
+}
+
+#task-input {
+  width: 250px;
+  padding: 2px;
+}
+
 /* Main section */
 main {
   background-color: white;
