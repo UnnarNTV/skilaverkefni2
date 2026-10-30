@@ -44,18 +44,21 @@ function addTask() {
 // Changes the filter state to all task
 function showAllTasks() {
   filterState = "All";
+  document.getElementById("task-header").innerHTML = "Tasks - all";
   renderTasks();
 }
 
 // Changes the filter state to incomplete tasks
 function showPendingTasks() {
   filterState = "Pending";
+  document.getElementById("task-header").innerHTML = "Tasks - pending";
   renderTasks();
 }
 
 // Changes the filter state to completed tasks
 function showCompletedTasks() {
   filterState = "Completed";
+  document.getElementById("task-header").innerHTML = "Tasks - completed";
   renderTasks();
 }
 
@@ -96,6 +99,7 @@ function renderTasks() {
     visibleTasks = [...tasks].filter((task) => task.done);
   }
 
+  // Generate html
   const taskHTML = visibleTasks
     .map(
       (task) => `
@@ -129,4 +133,5 @@ function loadData() {
 
 // Initial
 loadData();
+showAllTasks();
 renderTasks();
