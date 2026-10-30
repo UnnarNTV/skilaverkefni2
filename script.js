@@ -60,9 +60,12 @@ function renderTasks() {
       (task) => `
         <div class="task ${task.done ? "task-done" : ""}">
             <p class="task-title">${task.title}</p>
-            <div class="task-buttons">
+            <div class="lower-part">
+              <p class="status">${task.done ? "Completed" : "Pending"}</p>
+              <div class="task-buttons">
                 <button ${task.done ? "disabled" : ""} onclick="completeTask(${task.id})">Completed</button>
                 <button onclick="removeTask(${task.id})">Delete</button>
+              </div>
             </div>
         </div>
         `,

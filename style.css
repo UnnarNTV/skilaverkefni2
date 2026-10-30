@@ -112,6 +112,14 @@ h2 {
   cursor: default;
 }
 
+.lower-part {
+  text-align: center;
+}
+
+.status {
+  margin: 0 0 8px;
+}
+
 .task-buttons {
   visibility: hidden;
 }
