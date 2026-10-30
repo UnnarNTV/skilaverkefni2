@@ -38,9 +38,10 @@ function addTask() {
     renderTasks();
   }
   taskInput.value = "";
+  saveData();
 }
 
-// Changes the filter state to all
+// Changes the filter state to all task
 function showAllTasks() {
   filterState = "All";
   renderTasks();
@@ -62,12 +63,14 @@ function showCompletedTasks() {
 function completeTask(id) {
   tasks.find((task) => task.id === id).done = true;
   renderTasks();
+  saveData();
 }
 
 // Remove a task from the task list
 function removeTask(id) {
   tasks = tasks.filter((task) => !(task.id === id));
   renderTasks();
+  saveData();
 }
 
 // Renders updated statistics about tasks in the header
@@ -113,4 +116,17 @@ function renderTasks() {
   updateStatistics();
 }
 
+// Saves task data to local storage
+function saveData() {
+  const saveString = JSON.stringify(tasks);
+  localStorage.setItem("taskData", saveString);
+}
+
+// Loads task data from local storage
+function loadData() {
+  tasks = JSON.parse(localStorage.getItem("taskData"));
+}
+
+// Initial
+loadData();
 renderTasks();
