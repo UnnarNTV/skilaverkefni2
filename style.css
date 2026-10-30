@@ -96,17 +96,21 @@ section {
 
 h2 {
   text-align: center;
+  font-family: "Permanent Marker", cursive;
+  font-weight: 300;
+  color: rgb(3, 3, 158);
 }
 
 .task-display {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
   gap: 9px;
 }
 
 /* Task post-it notes */
 .task {
+  font-family: "Kalam", cursive;
   width: 200px;
   height: 200px;
   background-color: rgb(255, 246, 141);
