@@ -104,8 +104,8 @@ function renderTasks() {
             <div class="lower-part">
               <p class="status">${task.done ? "Completed" : "Pending"}</p>
               <div class="task-buttons">
-                <button ${task.done ? "disabled" : ""} onclick="completeTask(${task.id})">Completed</button>
-                <button onclick="removeTask(${task.id})">Delete</button>
+                <button class="complete" ${task.done ? "disabled" : ""} onclick="completeTask(${task.id})">Completed</button>
+                <button class="delete" onclick="removeTask(${task.id})">Delete</button>
               </div>
             </div>
         </div>
