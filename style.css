@@ -55,8 +55,12 @@ h1 {
 
 .task-form {
   background-color: white;
-  padding: 5px;
-  text-align: center;
+  padding: 5px 5px 5px 20px;
+  text-align: left;
+}
+
+.filter {
+  width: 80px;
 }
 
 #task-input {

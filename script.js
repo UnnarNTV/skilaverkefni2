@@ -1,10 +1,21 @@
+// base task data
 let tasks = [
   { id: 1, title: "Klára HTML", done: false },
   { id: 2, title: "Æfa CSS", done: true },
   { id: 3, title: "Byrja á JS", done: false },
 ];
 
+// Keeps track of which tasks do render
+let filterState = "All";
+
 // Event listeners
+document.getElementById("filter-all").addEventListener("click", showAllTasks);
+document
+  .getElementById("filter-pending")
+  .addEventListener("click", showPendingTasks);
+document
+  .getElementById("filter-completed")
+  .addEventListener("click", showCompletedTasks);
 document.getElementById("add-task-button").addEventListener("click", addTask);
 
 // Adds a task to the task list
@@ -27,6 +38,24 @@ function addTask() {
     renderTasks();
   }
   taskInput.value = "";
+}
+
+// Changes the filter state to all
+function showAllTasks() {
+  filterState = "All";
+  renderTasks();
+}
+
+// Changes the filter state to incomplete tasks
+function showPendingTasks() {
+  filterState = "Pending";
+  renderTasks();
+}
+
+// Changes the filter state to completed tasks
+function showCompletedTasks() {
+  filterState = "Completed";
+  renderTasks();
 }
 
 // Marks a task as completed
@@ -54,8 +83,17 @@ function updateStatistics() {
 
 // Generates html for tasks and displays them on the task display
 function renderTasks() {
-  console.log("Task array: ", tasks);
-  const taskHTML = tasks
+  // Filter tasks to show only those that the user has specified
+  let visibleTasks;
+  if (filterState === "All") {
+    visibleTasks = [...tasks];
+  } else if (filterState === "Pending") {
+    visibleTasks = [...tasks].filter((task) => !task.done);
+  } else if (filterState === "Completed") {
+    visibleTasks = [...tasks].filter((task) => task.done);
+  }
+
+  const taskHTML = visibleTasks
     .map(
       (task) => `
         <div class="task ${task.done ? "task-done" : ""}">
