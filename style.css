@@ -110,6 +110,12 @@ h2 {
   overflow-wrap: anywhere;
 }
 
+.task-title {
+  font-size: 20px;
+  margin: 0;
+  text-align: left;
+}
+
 .task-done {
   background-color: green;
 }
@@ -132,17 +138,53 @@ h2 {
 }
 
 .task-buttons button {
-  background-color: rgba(1, 1, 1, 0);
-  border: 1px solid black;
-  border-radius: 3px;
-}
-
-.task-buttons button:hover {
-  background-color: rgb(172, 141, 2);
-}
-
-.task-buttons button:active {
+  border: 2px solid white;
+  border-radius: 15px;
+  box-shadow: 2px 2px 3px black;
   color: white;
+  padding: 5px 8px;
+}
+
+button.complete {
+  background-color: rgb(11, 179, 25);
+}
+
+button.delete {
+  background-color: rgb(231, 38, 38);
+}
+
+.task-buttons button.complete:hover:not(:disabled) {
+  background-color: rgb(8, 145, 19);
+}
+
+.task-buttons button.delete:hover {
+  background-color: rgb(177, 29, 29);
+}
+
+.task-buttons button.complete:active:not(:disabled) {
+  /* background-color: rgb(5, 85, 12); */
+}
+
+.task-buttons button.complete:hover:active:not(:disabled) {
+  position: relative;
+  top: 2px;
+  left: 2px;
+  box-shadow: none;
+}
+
+.task-buttons button.delete:active {
+  background-color: rgb(177, 29, 29);
+  position: relative;
+  top: 2px;
+  left: 2px;
+  box-shadow: none;
+}
+
+.task-buttons button.delete:hover:active {
+  position: relative;
+  top: 2px;
+  left: 2px;
+  box-shadow: none;
 }
 
 .task-buttons button:disabled {
@@ -151,28 +193,13 @@ h2 {
 
 .task-buttons button:disabled {
   border-color: rgba(0, 0, 0, 0.2);
-}
-
-.task-done .task-buttons button:hover {
-  background-color: rgba(1, 73, 1, 1);
-}
-
-.task-buttons button:hover:disabled {
-  background-color: rgba(0, 0, 0, 0);
-}
-
-.task-buttons button:active:disabled {
-  color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(11, 179, 25, 0.2);
+  color: rgba(256, 256, 256, 0.2);
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
 }
 
 .task:hover .task-buttons {
   visibility: visible;
-}
-
-.task-title {
-  font-size: 20px;
-  margin: 0;
-  text-align: left;
 }
 
 /* Footer */
