@@ -1,10 +1,3 @@
-// base task data
-let tasks = [
-  { id: 1, title: "Klára HTML", done: false },
-  { id: 2, title: "Æfa CSS", done: true },
-  { id: 3, title: "Byrja á JS", done: false },
-];
-
 // Keeps track of which tasks do render
 let filterState = "All";
 
@@ -128,7 +121,18 @@ function saveData() {
 
 // Loads task data from local storage
 function loadData() {
-  tasks = JSON.parse(localStorage.getItem("taskData"));
+  const loadedTasks = JSON.parse(localStorage.getItem("taskData"));
+  if (loadedTasks) {
+    // Load stored data if it exists
+    tasks = loadedTasks;
+  } else {
+    // Load default initial data if the local storage does not contain anything
+    tasks = [
+      { id: 1, title: "Klára HTML", done: false },
+      { id: 2, title: "Æfa CSS", done: true },
+      { id: 3, title: "Byrja á JS", done: false },
+    ];
+  }
 }
 
 // Initial
