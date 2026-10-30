@@ -12,11 +12,10 @@ body {
 }
 
 .container {
-  width: 900px;
+  width: 1200px;
   margin: 0 auto;
   border: 1px solid grey;
   border-top: none;
-  /* box-shadow: 2px 2px 3px black; */
 }
 
 /* Header */
@@ -73,15 +72,15 @@ h1 {
 main {
   background-color: white;
   padding: 1px 0;
+  background-image: url(./images/white-board-texture.png);
+  background-repeat: repeat;
+  background-size: 50%;
 }
 
 section {
   min-height: 500px;
-  background-color: rgb(219, 194, 111);
   margin: 0 20px 40px;
-  box-shadow: 3px 3px 3px black;
-  border-radius: 5px;
-  padding: 5px 5px 30px;
+  padding: 5px 15px 30px;
 }
 
 h2 {
@@ -99,15 +98,18 @@ h2 {
 .task {
   width: 200px;
   height: 200px;
-  background-color: rgb(255, 208, 0);
-  box-shadow: 4px 4px 4px black;
-  border-radius: 2px;
+  background-color: rgb(255, 246, 141);
+  box-shadow: 1px 1px 2px black;
   padding: 15px 10px 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   overflow-wrap: anywhere;
+}
+
+.task:hover {
+  border: 0.5px solid black;
 }
 
 .task-title {
@@ -117,7 +119,12 @@ h2 {
 }
 
 .task-done {
-  background-color: green;
+  background-color: rgb(225, 244, 128);
+}
+
+.task-done .status {
+  text-decoration: underline;
+  font-style: italic;
 }
 
 .task-title:hover {
