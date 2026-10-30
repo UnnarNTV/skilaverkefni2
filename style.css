@@ -20,27 +20,38 @@ body {
 
 /* Header */
 header {
-  background-color: purple;
+  background-image: url(./images/top-down-desk.png);
+  background-size: cover;
   position: sticky;
   top: 0px;
   padding: 1px 0 0;
   border-top: 1px solid grey;
+  border-bottom: 2px solid black;
 }
 
 h1 {
   text-align: center;
+  background-color: rgba(245, 245, 220, 0.75);
+  border: 1px solid grey;
+  width: 150px;
+  border-radius: 5px;
+  margin: 10px auto;
 }
 
 .statistics-row {
   display: flex;
   justify-content: center;
+  gap: 5px;
+  margin: 0 20px;
 }
 
 .statistic-box {
   text-align: center;
   flex-grow: 1;
-  background-color: rgb(241, 204, 80);
+  /* background-color: rgb(241, 204, 80); */
   border: 1px solid grey;
+  background-color: rgba(245, 245, 220, 0.75);
+  border-radius: 5px;
   margin: 0;
   display: flex;
   align-items: center;
@@ -54,7 +65,7 @@ h1 {
 }
 
 .task-form {
-  background-color: white;
+  /* background-color: white; */
   padding: 5px 5px 5px 20px;
   text-align: left;
 }
