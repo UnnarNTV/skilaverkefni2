@@ -90,6 +90,7 @@ h2 {
   gap: 9px;
 }
 
+/* Task post-it notes */
 .task {
   width: 200px;
   height: 200px;
@@ -120,8 +121,43 @@ h2 {
   margin: 0 0 8px;
 }
 
+/* Buttons on post-it notes */
 .task-buttons {
   visibility: hidden;
+}
+
+.task-buttons button {
+  background-color: rgba(1, 1, 1, 0);
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+.task-buttons button:hover {
+  background-color: rgb(172, 141, 2);
+}
+
+.task-buttons button:active {
+  color: white;
+}
+
+.task-buttons button:disabled {
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.task-buttons button:disabled {
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.task-done .task-buttons button:hover {
+  background-color: rgba(1, 73, 1, 1);
+}
+
+.task-buttons button:hover:disabled {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.task-buttons button:active:disabled {
+  color: rgba(0, 0, 0, 0.3);
 }
 
 .task:hover .task-buttons {
