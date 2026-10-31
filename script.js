@@ -1,5 +1,6 @@
 // Keeps track of which tasks do render
 let filterState = "All";
+let sortState = "Reset";
 
 // Event listeners
 document.getElementById("filter-all").addEventListener("click", showAllTasks);
@@ -56,6 +57,15 @@ function addTask() {
 // Changes the filter state to all task
 function showAllTasks() {
   filterState = "All";
+
+  // Cycle through task sorting states
+  if (sortState === "Reset" || sortState === "PendingFirst") {
+    sortState = "Unsorted";
+  } else if (sortState === "Unsorted") {
+    sortState = "CompletedFirst";
+  } else if (sortState === "CompletedFirst") {
+    sortState = "PendingFirst";
+  }
   document.getElementById("task-header").innerHTML = "Tasks - all";
   renderTasks();
 }
@@ -63,6 +73,7 @@ function showAllTasks() {
 // Changes the filter state to incomplete tasks
 function showPendingTasks() {
   filterState = "Pending";
+  sortState = "Reset";
   document.getElementById("task-header").innerHTML = "Tasks - pending";
   renderTasks();
 }
@@ -70,6 +81,7 @@ function showPendingTasks() {
 // Changes the filter state to completed tasks
 function showCompletedTasks() {
   filterState = "Completed";
+  sortState = "Reset";
   document.getElementById("task-header").innerHTML = "Tasks - completed";
   renderTasks();
 }
@@ -107,7 +119,14 @@ function renderTasks() {
   // Filter tasks to show only those that the user has specified
   let visibleTasks;
   if (filterState === "All") {
-    visibleTasks = [...tasks];
+    // display tasks as sorted based on sorting state
+    if (sortState === "Unsorted") {
+      visibleTasks = [...tasks];
+    } else if (sortState === "CompletedFirst") {
+      visibleTasks = [...tasks].sort((a, b) => a.done - b.done);
+    } else if (sortState === "PendingFirst") {
+      visibleTasks = [...tasks].sort((b, a) => a.done - b.done);
+    }
   } else if (filterState === "Pending") {
     visibleTasks = [...tasks].filter((task) => !task.done);
   } else if (filterState === "Completed") {
