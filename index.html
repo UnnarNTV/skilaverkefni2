@@ -36,26 +36,23 @@
         <!-- Statistics -->
         <div class="statistics-row">
           <div class="statistic-box">
-            <p>Tasks:</p>
-            <div class="statistic-value" id="tasks-total">#</div>
+            <p id="tasks-total">Tasks:</p>
           </div>
           <div class="statistic-box">
-            <p>Completed:</p>
-            <div class="statistic-value" id="tasks-finished">#</div>
+            <p id="tasks-finished">Completed:</p>
           </div>
           <div class="statistic-box">
-            <p>Not completed:</p>
-            <div class="statistic-value" id="tasks-uncompleted">#</div>
+            <p id="tasks-incomplete">Not completed:</p>
           </div>
         </div>
         <!-- Task input form -->
         <form class="task-form" action="">
           <button type="button" id="filter-all" class="filter">All</button>
-          <button type="button" id="filter-pending" class="filter">
-            Pending
-          </button>
           <button type="button" id="filter-completed" class="filter">
             Completed
+          </button>
+          <button type="button" id="filter-pending" class="filter">
+            Pending
           </button>
           <input type="text" id="task-input" placeholder="Task name" />
           <button type="button" id="add-task-button">Add task</button>

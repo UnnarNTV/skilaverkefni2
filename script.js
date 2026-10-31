@@ -73,11 +73,14 @@ function removeTask(id) {
 function updateStatistics() {
   const tasksTotal = tasks.length;
   const tasksFinished = tasks.filter((task) => task.done).length;
-  const tasksUncompleted = tasks.filter((task) => !task.done).length;
+  const tasksIncomplete = tasks.filter((task) => !task.done).length;
 
-  document.getElementById("tasks-total").innerHTML = tasksTotal;
-  document.getElementById("tasks-finished").innerHTML = tasksFinished;
-  document.getElementById("tasks-uncompleted").innerHTML = tasksUncompleted;
+  document.getElementById("tasks-total").innerHTML =
+    "Total tasks: " + tasksTotal;
+  document.getElementById("tasks-finished").innerHTML =
+    "Completed tasks: " + tasksFinished;
+  document.getElementById("tasks-incomplete").innerHTML =
+    "Pending tasks: " + tasksIncomplete;
 }
 
 // Generates html for tasks and displays them on the task display
