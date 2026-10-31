@@ -1,3 +1,4 @@
+/* Top level elements */
 * {
   box-sizing: border-box;
 }
@@ -56,18 +57,11 @@ h1 {
 }
 
 .statistic-box {
-  text-align: center;
   flex-grow: 1;
-  /* background-color: rgb(241, 204, 80); */
   border: 1px solid grey;
   background-color: rgba(245, 245, 220, 0.75);
   border-radius: 5px;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  gap: 4px;
   padding: 3px;
-  /* box-shadow: 2px 2px 3px black; */
 }
 
 .statistic-box p {
@@ -75,7 +69,6 @@ h1 {
 }
 
 .task-form {
-  /* background-color: white; */
   padding: 5px 5px 5px 20px;
   text-align: left;
 }
@@ -194,10 +187,6 @@ button.delete {
   background-color: rgb(177, 29, 29);
 }
 
-.task-buttons button.complete:active:not(:disabled) {
-  /* background-color: rgb(5, 85, 12); */
-}
-
 .task-buttons button.complete:hover:active:not(:disabled) {
   position: relative;
   top: 2px;
@@ -225,7 +214,7 @@ button.delete {
 }
 
 .task-buttons button:disabled {
-  border-color: rgba(0, 0, 0, 0.2);
+  border: none;
   background-color: rgba(11, 179, 25, 0.2);
   color: rgba(256, 256, 256, 0.2);
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
