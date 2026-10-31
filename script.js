@@ -38,7 +38,7 @@ function addTask() {
       (highest, current) => Math.max(highest, current.id),
       1,
     );
-
+    // Creates and adds this task to the list of tasks
     tasks.push({
       id: highestId + 1,
       title: taskTitle,
@@ -46,10 +46,10 @@ function addTask() {
     });
     renderTasks();
   }
-  taskInput.value = "";
   saveData();
 
-  // Set the focus on the task input field
+  // Empty and set the focus on the task input field
+  taskInput.value = "";
   taskInput.focus();
 }
 
@@ -157,8 +157,7 @@ function loadData() {
   }
 }
 
-// Initial
+// Initialize page
 loadData();
 showAllTasks();
-renderTasks();
 document.getElementById("task-input").focus();
