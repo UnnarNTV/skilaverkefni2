@@ -10,6 +10,22 @@ document
   .getElementById("filter-completed")
   .addEventListener("click", showCompletedTasks);
 document.getElementById("add-task-button").addEventListener("click", addTask);
+document.getElementById("task-input").addEventListener("keydown", enterTask);
+document.querySelector("form").addEventListener("keydown", stopSubmit);
+
+// Adds a new task if the Enter key was pressed
+function enterTask(event) {
+  if (event.key === "Enter") {
+    addTask();
+  }
+}
+
+// Prevents the form form submitting when the Enter key is pressed
+function stopSubmit(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+  }
+}
 
 // Adds a task to the task list
 function addTask() {
@@ -32,6 +48,9 @@ function addTask() {
   }
   taskInput.value = "";
   saveData();
+
+  // Set the focus on the task input field
+  taskInput.focus();
 }
 
 // Changes the filter state to all task
