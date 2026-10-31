@@ -161,3 +161,4 @@ function loadData() {
 loadData();
 showAllTasks();
 renderTasks();
+document.getElementById("task-input").focus();
