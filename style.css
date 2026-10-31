@@ -8,11 +8,15 @@ html {
 
 body {
   background-color: rgb(233, 233, 219);
+  background-image: url(./images/plaster-texture.png);
+  background-repeat: repeat;
+  background-size: 50%;
+  background-attachment: fixed;
   margin: 0;
 }
 
 .container {
-  width: 1200px;
+  width: 1108px;
   margin: 0 auto;
   border: 1px solid grey;
   border-top: none;
