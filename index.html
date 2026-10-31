@@ -49,15 +49,38 @@
         </div>
         <!-- Task input form -->
         <form class="task-form" action="">
-          <button type="button" id="filter-all" class="filter">All</button>
-          <button type="button" id="filter-completed" class="filter">
+          <button
+            type="button"
+            title="Show all tasks. Multiple clicks will sort tasks based on completion."
+            id="filter-all"
+            class="filter"
+          >
+            All
+          </button>
+          <button
+            type="button"
+            title="Show only completed tasks."
+            id="filter-completed"
+            class="filter"
+          >
             Completed
           </button>
-          <button type="button" id="filter-pending" class="filter">
+          <button
+            type="button"
+            title="Show only pending tasks."
+            id="filter-pending"
+            class="filter"
+          >
             Pending
           </button>
           <input type="text" id="task-input" placeholder="Task name" />
-          <button type="button" id="add-task-button">Add task</button>
+          <button
+            type="button"
+            title="Add a new task with specified task name."
+            id="add-task-button"
+          >
+            Add task
+          </button>
         </form>
       </header>
 
