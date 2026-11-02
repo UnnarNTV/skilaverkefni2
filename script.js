@@ -12,7 +12,7 @@ document
   .addEventListener("click", showCompletedTasks);
 document.getElementById("add-task-button").addEventListener("click", addTask);
 document.getElementById("task-input").addEventListener("keydown", enterTask);
-document.querySelector("form").addEventListener("keydown", stopSubmit);
+document.querySelector("form").addEventListener("submit", stopSubmit);
 
 // Adds a new task if the Enter key was pressed
 function enterTask(event) {
