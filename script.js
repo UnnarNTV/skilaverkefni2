@@ -93,6 +93,13 @@ function completeTask(id) {
   saveData();
 }
 
+// Marks a task as pending
+function reopenTask(id) {
+  tasks.find((task) => task.id === id).done = false;
+  renderTasks();
+  saveData();
+}
+
 // Remove a task from the task list
 function removeTask(id) {
   tasks = tasks.filter((task) => !(task.id === id));
@@ -142,7 +149,7 @@ function renderTasks() {
             <div class="lower-part">
               <p class="status">${task.done ? "Completed" : "Pending"}</p>
               <div class="task-buttons">
-                <button class="complete" ${task.done ? "disabled" : ""} onclick="completeTask(${task.id})">Completed</button>
+                <button class="complete" onclick="${task.done ? "reopenTask" : "completeTask"}(${task.id})">${task.done ? "Reopen" : "Complete"}</button>
                 <button class="delete" onclick="removeTask(${task.id})">Delete</button>
               </div>
             </div>
