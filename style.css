@@ -9,7 +9,7 @@ html {
 
 body {
   background-color: rgb(233, 233, 219);
-  background-image: url(./images/plaster-texture.png);
+  background-image: url(./images/plaster-texture.webp);
   background-repeat: repeat;
   background-size: 50%;
   background-attachment: fixed;
@@ -30,7 +30,7 @@ body {
 header {
   font-family: Arial;
   font-size: 13.33px;
-  background-image: url(./images/top-down-desk.png);
+  background-image: url(./images/top-down-desk.webp);
   background-size: cover;
   position: sticky;
   top: 0px;
@@ -86,7 +86,7 @@ h1 {
 main {
   background-color: white;
   padding: 1px 0;
-  background-image: url(./images/white-board-texture.png);
+  background-image: url(./images/white-board-texture.webp);
   background-repeat: repeat;
   background-size: 50%;
   flex-grow: 1;
